@@ -15,7 +15,7 @@
 				</form>
 			</div>
 			
-			<div class="col-sm-6">
+			<div class="col-sm-8">
 				<form class="navbar-form" action="<%=request.getContextPath()%>/produtos/filtrar">
 					<div class="form-group">
 						<input type="text" name="busca" placeholder="Digite o nome de um produto" class="form-control"/>

@@ -2,22 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Sistema de Filmes</title>
-<link
-	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css"
-	rel="stylesheet">
-</head>
-
-<body>
-
-	<jsp:include page="/resources/templates/navbar.jsp" />
+<jsp:include page="/resources/templates/navbar.jsp" />
 
 	<!-- Begin page content -->
 	<div class="container">
@@ -25,19 +10,21 @@
 			<h1>Confirmar Exclusão</h1>
 
 			<ul class="list-group">
-				<li class="list-group-item">Código: ${item.codEndereco}</li>
-				<li class="list-group-item">Logadouro: ${item.logadouro}</li>
-				<li class="list-group-item">Numero: ${item.numero}</li>
-				<li class="list-group-item">Complemento: ${item.complemento}</li>
-				<li class="list-group-item">Bairro: ${item.bairro}</li>
-				<li class="list-group-item">CEP: ${item.cep}</li>
+				<li class="list-group-item">Código: ${item.codFornecedor}</li>
+				<li class="list-group-item">Nome: ${item.nome}</li>
+				<li class="list-group-item">CNPJ: ${item.cnpj}</li>
+				<li class="list-group-item">Email: ${item.email}</li>
+				<li class="list-group-item">Fone: ${item.fone}</li>
+				<li class="list-group-item">Faturamento Anual: ${item.faturamentoAnual}</li>
+				<li class="list-group-item">Data de Cadastro: ${item.dataCadastro}</li>
+				
 			</ul>
 
 			<div>
 				<a
-					href="<%=request.getContextPath()%>/enderecos/excluir?codEndereco=${item.codEndereco}"
+					href="<%=request.getContextPath()%>/fornecedores/excluir?codFornecedor=${item.codFornecedor}"
 					class="btn btn-danger">Excluir</a> <a
-					href="<%=request.getContextPath()%>/manter/enderecos"
+					href="<%=request.getContextPath()%>/fornecedores/listar"
 					class="btn btn-default">Voltar</a>
 			</div>
 

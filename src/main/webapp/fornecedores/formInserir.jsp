@@ -2,34 +2,23 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Sistema de Filmes</title>
-<link
-	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css"
-	rel="stylesheet">
-</head>
 
-<body>
+<script>
+$('.datepicker').datepicker();
 
-	<jsp:include page="/resources/templates/navbar.jsp" />
+</script>
+
+<jsp:include page="/resources/templates/navbar.jsp" />
 
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Inserir Novo Endereço</h1>
+			<h1>Novo Fornecedor</h1>
 		</div>
 
 		<form method="post" name="myform" class="form-horizontal"
-			action="<%=request.getContextPath()%>/enderecos/inserir">
+			action="<%=request.getContextPath()%>/fornecedores/inserir">
 
-
-		<input type="hidden" value ="${item.cliente.codCliente}" name="codCliente"/> 
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
@@ -42,50 +31,50 @@
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="bairro">Bairro:</label>
+				<label class="col-sm-2 control-label" for="nome">Nome:</label>
 				<div class="col-sm-5">
-					<input type="text" name="bairro" id="bairro" value="${item.bairro}"
+					<input type="text" name="nome" id="nome" value="${item.nome}"
 					class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="cep">CEP:</label>
+				<label class="col-sm-2 control-label" for="cnpj">CNPJ:</label>
 				<div class="col-sm-5">
-					<input type="text" name="cep" id="cep" value="${item.cep}"
+					<input type="text" name="cnpj" id="cnpj" value="${item.cnpj}"
 						class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="complemento">Complemento:</label>
+				<label class="col-sm-2 control-label" for="email">Email:</label>
 				<div class="col-sm-5">
-					<input type="text" name="complemento" id="complemento" 
-						value="${item.complemento}" 
+					<input type="text" name="email" id="email" 
+						value="${item.email}" 
 						class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="logadouro">Logadouro:</label>
+				<label class="col-sm-2 control-label" for="fone">Fone:</label>
 				<div class="col-sm-5">
-					<input type="text" name="logadouro" id="logadouro" value="${item.logadouro}"
+					<input type="text" name="fone" id="fone" value="${item.fone}"
 						class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="numero">Numero:</label>
+				<label class="col-sm-2 control-label" for="faturamento">Faturamento Anual:</label>
 				<div class="col-sm-5">
-					<input type="text" name="numero" id="numero" value="${item.numero}"
-						class="form-control" />
+					<input type="text" name="faturamento" id="faturamento" value="${item.faturamentoAnual}"
+						required="required" class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-primary">Inserir</button>
-					<a href="<%=request.getContextPath()%>/manter/enderecos"
+					<a href="<%=request.getContextPath()%>/fornecedores/listar"
 						class="btn btn-default">Voltar</a>
 				</div>
 			</div>
@@ -98,7 +87,16 @@
 
 	<!-- Core JS -->
 	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+	<script	src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/bootstrap-datepicker.js"></script>
+	<script>
+      $(document).ready(function () {
+        $('#dataCadastro').datepicker({
+            format: "dd/mm/yyyy",
+            language: "pt-BR"
+        });
+      });
+    </script>
+		
 </body>
 </html>

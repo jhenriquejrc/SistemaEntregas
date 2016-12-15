@@ -88,8 +88,13 @@ public class Instanciar {
 	public static Fornecedor fornecedor (HttpServletRequest request){
 		Fornecedor aux = new Fornecedor();
 		String s;
-		FornecedorServico fs = new FornecedorServico();
 
+		s = request.getParameter("codFornecedor");
+        if(s!=null && !s.isEmpty()){
+        	int cod = Integer.parseInt(request.getParameter("codFornecedor"));
+            aux.setCodFornecedor(cod);
+        }
+		
 		s = request.getParameter("nome");
         if(s!=null && !s.isEmpty()){
             aux.setNome(s);
@@ -124,6 +129,12 @@ public class Instanciar {
 	public static Produto produto (HttpServletRequest request) {
 		Produto aux = new Produto();
 		String s;
+		
+		s = request.getParameter("codProduto");
+        if(s!=null && !s.isEmpty()){
+        	int cod = Integer.parseInt(request.getParameter("codProduto"));
+            aux.setCodProduto(cod);
+        }
 		
 		s = request.getParameter("nome");
 		if(s!=null && !s.isEmpty()) {

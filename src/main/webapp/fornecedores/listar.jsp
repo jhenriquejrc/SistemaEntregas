@@ -14,6 +14,15 @@
 				<button type="submit" class="btn btn-primary" >Inserir Novo</button>
 				</form>
 			</div>
+			
+			<div class="col-sm-6">
+				<form class="navbar-form" action="<%=request.getContextPath()%>/fornecedores/filtrar">
+					<div class="form-group">
+						<input type="text" name="busca" placeholder="Procurar por" class="form-control"/>
+					</div>
+					<button type="submit" class="btn btn-success">Filtrar</button>
+				</form>
+			</div>
 		</div>
 		<table class="table">
 
@@ -39,7 +48,7 @@
 						<td>${x.fone}</td>
 						<td>${x.email}</td>
                        <td><fmt:formatDate type="date" pattern="dd/MM/yyyy" value="${x.dataCadastro}"/></td>
-                       <<td><fmt:setLocale value="pt_BR"/><fmt:formatNumber type="currency" value="${x.faturamentoAnual}" /></td>
+                       <td><fmt:setLocale value="pt_BR"/><fmt:formatNumber type="currency" value="${x.faturamentoAnual}" /></td>
 						<td><a href="<%=request.getContextPath()%>/fornecedores/editar?codFornecedor=${x.codFornecedor}" class="btn btn-primary btn-xs">Editar</a>
 						<a href="<%=request.getContextPath()%>/fornecedores/remover?codFornecedor=${x.codFornecedor}" class="btn btn-danger btn-xs">Excluir</a></td>
 					</tr>

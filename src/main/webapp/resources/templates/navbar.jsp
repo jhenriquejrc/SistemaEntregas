@@ -8,6 +8,7 @@
 	<title>Sistema de Entregas</title>
 	<link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/css/datepicker.css" rel="stylesheet">
 </head>
 
 <body>
