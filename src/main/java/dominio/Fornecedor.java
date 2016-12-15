@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -35,7 +34,7 @@ public class Fornecedor implements Serializable {
 	
 	
 	public Fornecedor () {
-		produtos = new LinkedList();
+		produtos = new LinkedList<Produto>();
 	}
 
 	public Fornecedor(Integer codFornecedor, String nome, String cnpj, String fone, String email,
@@ -48,7 +47,7 @@ public class Fornecedor implements Serializable {
 		this.email = email;
 		this.faturamentoAnual = faturamentoAnual;
 		this.dataCadastro = dataCadastro;
-		produtos = new LinkedList();
+		produtos = new LinkedList<Produto>();
 	}
 
 	public Integer getCodFornecedor() {

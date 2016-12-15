@@ -19,7 +19,6 @@ public class EnderecoInserir extends HttpServlet {
     
     private static String DESTINO = "/enderecos/listar?codCliente=";
     private static String FORM = "/enderecos/formInserir.jsp";
-	//private static String ERRO = "/publico/erro.jsp";
   	 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	

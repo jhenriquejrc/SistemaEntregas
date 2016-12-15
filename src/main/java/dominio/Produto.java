@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -36,7 +35,7 @@ public class Produto implements Serializable {
 	private List<ItemEntregue> itens;
 	
 	public Produto() {
-		itens = new LinkedList();
+		itens = new LinkedList<ItemEntregue>();
 	}
 
 	public Produto(Integer codProduto, String nome, BigDecimal preco, Fornecedor fornecedor) {
@@ -46,7 +45,7 @@ public class Produto implements Serializable {
 		this.preco = preco;
 		this.fornecedor = fornecedor;
 		fornecedor.addProduto(this);
-		itens = new LinkedList();
+		itens = new LinkedList<ItemEntregue>();
 	}
 
 	public Integer getCodProduto() {

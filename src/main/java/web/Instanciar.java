@@ -19,6 +19,8 @@ import servico.FornecedorServico;
 import servico.ProdutoServico;
 
 public class Instanciar {
+	
+	
 
 	public static Endereco endereco (HttpServletRequest request) {
 		Endereco aux = new Endereco();
@@ -30,7 +32,12 @@ public class Instanciar {
 			Cliente cli = cs.buscar(Integer.parseInt(s));
 			aux.setCliente(cli);
 		}
-		
+
+		s = request.getParameter("codEndereco");
+		if(s!=null && !s.isEmpty()) {
+			aux.setCodEndereco(Integer.parseInt(s));
+		}
+
 		s = request.getParameter("logadouro");
 		if(s!=null && !s.isEmpty()) {
 			aux.setLogadouro(s);

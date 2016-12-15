@@ -36,22 +36,24 @@ public class ProdutoDaoImpl implements ProdutoDao {
 		return em.find(Produto.class, cod);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<Produto> buscarTodos() {
 		String jpql = "SELECT x FROM Produto x";
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
 	
+	@Override
+	@SuppressWarnings("unchecked")
 	public List<Produto> buscarTodosOrdenadoNome() {
 		String jpql = "SELECT x FROM Produto x ORDER BY x.nome ASC";
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<Produto> buscaNomePreco(String nome, BigDecimal valorMin, BigDecimal valorMax){
 		String jpql = "SELECT x FROM Produto x WHERE x.nome LIKE :p1 AND x.preco >= :p2 AND x.preco <= :p3 ORDER BY x.nome";
 			Query query = em.createQuery(jpql);
@@ -63,6 +65,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public Produto buscaNomeExatoDiferente(Integer codProduto, String nome) {
 		String jpql = "SELECT x FROM Produto x WHERE x.codProduto <> :p0 AND x.nome = :p1";
 		Query query = em.createQuery(jpql);
@@ -73,6 +76,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public Produto buscaNomeExato(String nome) {
 		String jpql = "SELECT x FROM Produto x WHERE x.nome = :p1";
 		Query query = em.createQuery(jpql);
@@ -82,6 +86,7 @@ public class ProdutoDaoImpl implements ProdutoDao {
 	}
 	
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<Produto> buscarPorNome(String nome) {
 		String jpql = "SELECT x FROM Produto x WHERE x.nome LIKE :p1";
 		Query query = em.createQuery(jpql);

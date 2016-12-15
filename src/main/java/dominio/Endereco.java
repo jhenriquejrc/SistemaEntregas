@@ -37,7 +37,7 @@ public class Endereco implements Serializable {
 	private Cliente cliente;
 	
 	public Endereco () {
-		entregas = new LinkedList();
+		entregas = new LinkedList<Entrega>();
 	}
 
 	public Endereco(Integer codEndereco, String logadouro, Integer numero, String complemento, String bairro,
@@ -51,7 +51,7 @@ public class Endereco implements Serializable {
 		this.cep = cep;
 		this.cliente = cliente;
 		cliente.addEndereco(this);
-		entregas = new LinkedList();
+		entregas = new LinkedList<Entrega>();
 	}
 
 	public Integer getCodEndereco() {

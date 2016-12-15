@@ -1,13 +1,11 @@
 package dao;
 
-
 import impl.ClienteDaoImpl;
 import impl.EnderecoDaoImpl;
 import impl.EntregaDaoImpl;
 import impl.FornecedorDaoImpl;
 import impl.ItemEntregueDaoImpl;
 import impl.ProdutoDaoImpl;
-import dominio.Produto;
 
 public class DaoFactory {
 

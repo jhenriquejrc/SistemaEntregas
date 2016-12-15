@@ -5,9 +5,6 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -105,9 +102,9 @@ public class Instanciacao extends HttpServlet {
 		es.inserir(e5);
 		es.inserir(e6);
 		
-		fs.inserirAtualizar(f1);
-		fs.inserirAtualizar(f2);
-		fs.inserirAtualizar(f3);
+		fs.inserir(f1);
+		fs.inserir(f2);
+		fs.inserir(f3);
 		
 		ps.inserir(p1);
 		ps.inserir(p2);
@@ -145,7 +142,7 @@ public class Instanciacao extends HttpServlet {
 		}
 		
 		catch (ServicoException e) {
-			response.getWriter().append("Erro no serviço.");
+			response.getWriter().append("Erro no serviï¿½o.");
 		}
 	
 	}

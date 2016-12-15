@@ -16,4 +16,5 @@ public interface ProdutoDao {
 	public Produto buscaNomeExatoDiferente(Integer codProduto, String nome);
 	public Produto buscaNomeExato(String nome);
 	public List<Produto> buscarPorNome(String nome);
+	List<Produto> buscarTodosOrdenadoNome();
 } 
