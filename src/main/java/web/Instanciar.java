@@ -132,14 +132,14 @@ public class Instanciar {
 
         s = request.getParameter("dataCadastro");
         if(s!=null && !s.isEmpty()){
-        	aux.setDataCadastro(Calendar.getInstance().getTime());
-        } else{
         	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         	try {
 				aux.setDataCadastro(sdf.parse(s));
 			} catch (ParseException e) {
 				System.out.println("Instanciacao: data de cadastro invalido");
 			}
+        } else{
+        	aux.setDataCadastro(Calendar.getInstance().getTime());
         }
 
         return aux;

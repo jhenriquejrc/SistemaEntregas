@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Produto implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_produto")
 	private Integer codProduto;
 	private String nome;
 	private BigDecimal preco;
@@ -44,7 +46,7 @@ public class Produto implements Serializable {
 		this.nome = nome;
 		this.preco = preco;
 		this.fornecedor = fornecedor;
-		fornecedor.addProduto(this);
+		//fornecedor.addProduto(this);
 		itens = new LinkedList<ItemEntregue>();
 	}
 

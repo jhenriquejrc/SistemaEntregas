@@ -24,7 +24,7 @@
 				<a
 					href="<%=request.getContextPath()%>/fornecedores/excluir?codFornecedor=${item.codFornecedor}"
 					class="btn btn-danger">Excluir</a> <a
-					href="<%=request.getContextPath()%>/fornecedores/listar"
+					href="<%=request.getContextPath()%>/fornecedor/listar"
 					class="btn btn-default">Voltar</a>
 			</div>
 

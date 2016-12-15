@@ -68,7 +68,7 @@
 
 	</div>
 
-	<jsp:include page="<%=request.getContextPath()%>/resources/templates/rodape.jsp"></jsp:include>
+	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
 
 	<!-- Core JS -->
 	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>

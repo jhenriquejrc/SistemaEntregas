@@ -42,7 +42,7 @@ public class EnderecoServico {
 		}
 		
 		if (!erros.isEmpty()) {
-			throw new ValidacaoException("Erro de validação do endereço", erros);
+			throw new ValidacaoException("Erro de validaï¿½ï¿½o do endereï¿½o", erros);
 		}
 	}
 	
@@ -74,8 +74,12 @@ public class EnderecoServico {
 		}
 	}
 	
-	public void excluir(Endereco x) {
+	public void excluir(Endereco x) throws ServicoException {
 		try {
+			x = dao.buscar(x.getCodEndereco());
+			if(!x.getEntregas().isEmpty()){
+				throw new ServicoException("NÃ£o Ã© possivel excluir, devido a entregas associadas", 1);
+			}
 			Transaction.begin();
 			dao.excluir(x);
 			Transaction.commit();

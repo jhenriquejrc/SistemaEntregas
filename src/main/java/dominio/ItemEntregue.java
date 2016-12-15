@@ -3,6 +3,7 @@ package dominio;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class ItemEntregue implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_itemEntregue")
 	private Integer codItemEntregue;
 	private Integer quantidade;
 
@@ -38,9 +40,9 @@ public class ItemEntregue implements Serializable {
 		this.codItemEntregue = codItemEntregue;
 		this.quantidade = quantidade;
 		this.produto = produto;
-		produto.addItemEntregue(this);
+		//produto.addItemEntregue(this);
 		this.entrega = entrega;
-		entrega.addItemEntregue(this);
+		//entrega.addItemEntregue(this);
 	}
 
 	public Integer getCodItemEntregue() {

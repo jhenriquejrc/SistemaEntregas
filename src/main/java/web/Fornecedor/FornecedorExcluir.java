@@ -29,7 +29,7 @@ public class FornecedorExcluir extends HttpServlet {
     	try {
 			fs.excluir(forn);
 			List<Fornecedor> fonecedores = fs.buscarTodos();
-			request.setAttribute("item", fonecedores);
+			request.setAttribute("fornecedores", fonecedores);
 	    	request.getRequestDispatcher(DESTINO).forward(request, response);
 		} catch (ServicoException e) {
 			request.setAttribute("msg", e.getMessage());

@@ -142,7 +142,7 @@ public class Instanciacao extends HttpServlet {
 		}
 		
 		catch (ServicoException e) {
-			response.getWriter().append("Erro no servi�o.");
+			response.getWriter().append(e.getMessage());
 		}
 	
 	}

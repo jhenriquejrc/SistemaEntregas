@@ -23,7 +23,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="valorMin">Preço mínimo:</label>
 				<div class="col-sm-5">
-					<input type="number" name="valorMin" id="valorMin"
+					<input type="text" name="valorMin" id="valorMin"
 						value="" required="required"
 						class="form-control" />
 				</div>
@@ -31,7 +31,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="valorMax">Preço máximo:</label>
 				<div class="col-sm-5">
-					<input type="number" name="valorMax" id="valorMax"
+					<input type="text" name="valorMax" id="valorMax"
 						value="" required="required"
 						class="form-control" />
 				</div>

@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Entrega implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_entrega")
 	private Integer codEntrega;
 	private Date data;
 	
@@ -42,7 +44,7 @@ public class Entrega implements Serializable {
 		this.codEntrega = codEntrega;
 		this.data = data;
 		this.endereco = endereco;
-		endereco.addEntrega(this);
+		//endereco.addEntrega(this);
 		itens = new LinkedList<ItemEntregue>();
 	}
 
