@@ -23,7 +23,7 @@ public class FornecedorEditar extends HttpServlet {
     	FornecedorServico fs = new FornecedorServico();
     	int cod = Integer.parseInt(request.getParameter("codFornecedor"));
     	Fornecedor forn = fs.buscar(cod);
-    	request.setAttribute("fornecedores", forn);
+    	request.setAttribute("item", forn);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
    	 

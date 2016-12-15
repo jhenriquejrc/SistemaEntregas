@@ -7,58 +7,77 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Editar Endereço</h1>
+			<h1>Editar Fornecedor</h1>
 		</div>
-
-		<form name="myform" class="form-horizontal" action="">
-
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="logadouro">Logadouro:</label>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<ul>
+					<c:forEach items="${erros}" var="msg">
+						<li class="erro">${msg}</li>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
+		<form name="myform" class="form-horizontal" method="post" action="<%=request.getContextPath()%>/fornecedores/atualizar">
+						<div class="form-group">
+				<label class="col-sm-2 control-label" for="codFornecedor">Código:</label>
 				<div class="col-sm-5">
-					<input type="text" name="logadouro" id="logadouro"
-						value="${item.logadouro}" required="required" class="form-control" />
+					<input type="text" name="codFornecedor" id="codFornecedor" value="${item.codFornecedor}"
+						required="required" readonly="readonly" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="nome">Nome:</label>
+				<div class="col-sm-5">
+					<input type="text" name="nome" id="nome"
+						value="${item.nome}" class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="numero">Numero:</label>
+				<label class="col-sm-2 control-label" for="cnpj">CNPJ:</label>
 				<div class="col-sm-5">
-					<input type="text" name="numero" id="numero" value="${item.numero}"
+					<input type="text" name="cnpj" id="cnpj" value="${item.cnpj}"
 						required="required" class="form-control" />
 				</div>
 			</div>
-
+			
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="complemento">Complemento:</label>
+				<label class="col-sm-2 control-label" for="email">Email:</label>
 				<div class="col-sm-5">
-					<input type="text" name="complemento" id="complemento"
-						value="${item.complemento}" required="required"
-						class="form-control" />
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="bairro">Bairro:</label>
-				<div class="col-sm-5">
-					<input type="text" name="bairro" id="bairro" value="${item.bairro}"
+					<input type="text" name="email" id="email" value="${item.email}"
 						required="required" class="form-control" />
 				</div>
 			</div>
-
+			
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="cep">Cep:</label>
+				<label class="col-sm-2 control-label" for="fone">Fone:</label>
 				<div class="col-sm-5">
-					<input type="text" name="cep" id="cep" value="${item.cep}"
+					<input type="text" name="fone" id="fone" value="${item.fone}"
+						required="required" class="form-control" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="faturamento">Faturamento:</label>
+				<div class="col-sm-5">
+					<input type="text" name="faturamento" id="faturamento" value="${item.faturamentoAnual}"
+						required="required" class="form-control" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="dataCadastro">Data de Cadastro:</label>
+				<div class="col-sm-5">
+					<input type="text" name="dataCadastro" id="fone"  readonly="readonly" value="${item.dataCadastro}"
 						required="required" class="form-control" />
 				</div>
 			</div>
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<form class="navbar-form" action="<%=request.getContextPath()%>/enderecos/atualizar">
 						<button type="submit" class="btn btn-primary" >Atualizar</button>
-						</form>
-						<a href="<%=request.getContextPath()%>/manter/enderecos" class="btn btn-default">Voltar</a>
+						<a href="<%=request.getContextPath()%>/fornecedores/listar" class="btn btn-default">Voltar</a>
 					</div>
 				</div>
 

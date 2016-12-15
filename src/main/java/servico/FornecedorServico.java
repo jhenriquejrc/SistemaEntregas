@@ -17,12 +17,26 @@ public class FornecedorServico {
         dao = DaoFactory.criarFornecedorDao();
     }
 
-    public void inserirAtualizar(Fornecedor x) throws ServicoException {
+    public void inserir(Fornecedor x) throws ServicoException {
         try {
             Fornecedor aux = dao.existeFornecedor(x.getCnpj());
             if (aux != null) {
-                throw new ServicoException("CNPJ j� existe", 0);
+                throw new ServicoException("CNPJ já existe", 0);
             }
+            Transaction.begin();
+            dao.inserirAtualizar(x);
+            Transaction.commit();
+        } catch (RuntimeException e) {
+            if (Transaction.isActive()) {
+                Transaction.rollback();
+            }
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+    
+    public void atualizar(Fornecedor x) throws ServicoException {
+        try {
+            
             Transaction.begin();
             dao.inserirAtualizar(x);
             Transaction.commit();
@@ -38,7 +52,7 @@ public class FornecedorServico {
         try {
             List<Produto> prod = x.getProdutos();
             if (prod.size() > 0) {
-                throw new ServicoException("N�o � poss�vel excluir pois j� existem produtos para esse Fornecedor", 0);
+                throw new ServicoException("Não é possível excluir! Já existe produto(s) para esse Fornecedor", 0);
             }
             Transaction.begin();
             dao.excluir(x);

@@ -31,7 +31,7 @@ public class FornecedorInserir extends HttpServlet {
 		
 		try {
 			fs.validar(x);
-			fs.inserirAtualizar(x);
+			fs.inserir(x);
 			List<Fornecedor> itens = fs.buscarTodos();
 			request.setAttribute("fornecedores", itens);
 			request.getRequestDispatcher(DESTINO).forward(request, response);

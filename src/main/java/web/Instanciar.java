@@ -1,6 +1,8 @@
 package web;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javax.servlet.http.HttpServletRequest;
@@ -87,6 +89,7 @@ public class Instanciar {
 	
 	public static Fornecedor fornecedor (HttpServletRequest request){
 		Fornecedor aux = new Fornecedor();
+		
 		String s;
 
 		s = request.getParameter("codFornecedor");
@@ -120,8 +123,17 @@ public class Instanciar {
             aux.setFaturamentoAnual(new BigDecimal(s));
         }
 
-
-        aux.setDataCadastro(Calendar.getInstance().getTime());
+        s = request.getParameter("dataCadastro");
+        if(s!=null && !s.isEmpty()){
+        	aux.setDataCadastro(Calendar.getInstance().getTime());
+        } else{
+        	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        	try {
+				aux.setDataCadastro(sdf.parse(s));
+			} catch (ParseException e) {
+				System.out.println("Instanciacao: data de cadastro invalido");
+			}
+        }
 
         return aux;
 	}
