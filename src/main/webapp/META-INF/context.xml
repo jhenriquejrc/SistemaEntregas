@@ -6,8 +6,8 @@
 	maxActive="100"
 	maxIdle="30"
 	maxWait="10000"
-	username="root"
-	password=""
+	username="entregas"
+	password="D3b433NyUpT8YYKe"
 	driverClassName="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost:3306/entregas?autoReconnect=true"/>
+	url="jdbc:mysql://54.233.167.213:3306/entregas?autoReconnect=true"/>
 </Context>
